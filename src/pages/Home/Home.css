@@ -1,0 +1,7 @@
+.banner-text{
+    margin-top: 100px;
+    border: 0px solid black;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    color: rgba(255, 255, 255, 0.877);
+}
