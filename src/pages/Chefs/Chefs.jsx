@@ -1,6 +1,7 @@
 import React from 'react';
 import {useParams, useLoaderData} from 'react-router-dom';
 import Chef from '../Chef/Chef';
+import './Chefs.css';
 
 const Chefs = () => {
 
@@ -10,6 +11,7 @@ const Chefs = () => {
     return (
         <div>
             <h3>chef from all over the world  : {countryChefs.length}</h3>
+            <div className='chef-cards'>
             {
                 // <Chef></Chef>
                 countryChefs.map( chef => <Chef
@@ -17,6 +19,7 @@ const Chefs = () => {
                 chef={chef}
                 ></Chef>)
             }
+            </div>
         </div>
     );
 };
