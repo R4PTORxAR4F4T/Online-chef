@@ -37,20 +37,20 @@ const Register = () => {
             <Container className='w-25 mx-auto border p-4 my-5 rounded-2'>
             <h3>Please Register</h3>
             <Form onSubmit={handleRegister}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3 fw-bolder" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Your Name" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3 fw-bolder" controlId="formBasicEmail">
                     <Form.Label>Photo URL</Form.Label>
                     <Form.Control type="text" name='photo' placeholder="Photo URL" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3 fw-bolder" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name='email' placeholder="Enter email" required />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3 fw-bolder" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
@@ -67,7 +67,7 @@ const Register = () => {
                 </Button>
                 <br />
                 <Form.Text className="text-secondary">
-                    Already Have an Account? <Link to="login">Login</Link>
+                    Already Have an Account? <Link to="/login">Login</Link>
                 </Form.Text>
                 <Form.Text className="text-success">
 

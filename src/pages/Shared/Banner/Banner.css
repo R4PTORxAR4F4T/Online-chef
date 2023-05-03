@@ -8,6 +8,6 @@
 .banner-logo{
     height: 60px;
 }
-.carousel-control-prev-icon, .active{
+.carousel-control-prev-icon, .active, .carousel-control-next-icon{
     display: none;
 }
