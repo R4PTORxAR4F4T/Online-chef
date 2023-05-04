@@ -9,7 +9,7 @@ const Footer = () => {
         <div className='w-75 mx-auto bg-black text-light mb-5 '>
             <div className='d-flex p-5 justify-content-between align-items-center'>
                 <div>
-                    <Image className='footer-logo' src='/public/headerLogo.png'></Image>
+                    <Image className='footer-logo' src='/headerLogo.png'></Image>
                     <p className=' fs-3 fw-bolder'>Chef</p>
                 </div>
                 <div>

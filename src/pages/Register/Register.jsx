@@ -8,6 +8,8 @@ import Header from '../Shared/Header/Header';
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const [accepted, setAccepted] = useState(false);
+    const [error, setError] = useState();
+
 
     const handleRegister = event => {
         event.preventDefault();
@@ -17,7 +19,13 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        // console.log(name, photo, email, password)
+        
+        if (password.length < 6) {
+            setError("password is less then 6 cherecter");
+            return;
+        }
+        
+        setError("");
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
@@ -70,10 +78,10 @@ const Register = () => {
                     Already Have an Account? <Link to="/login">Login</Link>
                 </Form.Text>
                 <Form.Text className="text-success">
-
+                <br />
                 </Form.Text>
                 <Form.Text className="text-danger">
-
+                <br />{error}
                 </Form.Text>
             </Form>
         </Container>

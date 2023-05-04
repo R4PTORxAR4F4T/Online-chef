@@ -14,10 +14,10 @@ const Banner = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-            <div className=' position-relative start-50 translate-middle-x banner-text'>
+            <div className='banner-text'>
                 <p className='text-center fs-2 text-warning-emphasis'>Welcome to </p>
                 <p className='text-center fs-2 fw-bolder text-warning-emphasis'>
-                <Image className='banner-logo' src="/public/headerLogo.png" fluid />
+                <Image className='banner-logo' src="/headerLogo.png" fluid />
                 Chefs Kitchen
                 </p>
 

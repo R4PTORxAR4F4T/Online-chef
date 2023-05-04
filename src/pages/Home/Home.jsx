@@ -1,15 +1,19 @@
 import React,{ useEffect, useState, useContext} from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useNavigation } from 'react-router-dom';
 import Banner from '../Shared/Banner/Banner';
 import Footer from '../Shared/Footer/Footer';
 import { AuthContext } from '../../providers/AuthProvider';
 import Service from '../Service/Service';
 import Customer from '../Customer/Customer';
+import Spinner from 'react-bootstrap/Spinner';
+import './Home.css'
+
 
 const Home = () => {
 
     const [countrys,setCountrys] = useState([]);
+    const navigation = useNavigation();
 
     useEffect(()=>{
         fetch('https://assignment-10-server-r4ptorxar4f4t.vercel.app/countrys')
@@ -22,7 +26,8 @@ const Home = () => {
     const {loading} = useContext(AuthContext);
     
     return (
-        <div className='w-75 mx-auto '>
+        <div className='home-body'>
+            <div>{navigation.state === 'loading' && <><Spinner animation="border" variant="secondary" /></>}</div>
             <Banner></Banner>
             <Container className='my-5'>
                 <Row>
@@ -36,6 +41,7 @@ const Home = () => {
                         }
                     </Col>
                     <Col lg={9} className=''>
+                    <div>{navigation.state === 'loading' && <><Spinner animation="border" variant="secondary" /></>}</div>
                         <Outlet></Outlet>
                     </Col>
                 </Row>

@@ -6,6 +6,7 @@ import React,{ useEffect, useState, useContext} from 'react';
 import { FaUserCircle } from "react-icons/fa";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import ActiveLink from '../../ActiveLink/ActiveLink';
 
 
 function Header() {
@@ -27,11 +28,11 @@ function Header() {
   // console.log();
 
   return (
-    <div className="sticky-top w-75 mx-auto">
+    <div className=" sticky-top header">
       <Navbar bg="dark" variant="dark">
         <Container fluid className="mx-4 justify-content-between">
           <div className="fw-bold text-white fs-2">
-            <Image className="header-img" src="/public/headerLogo.png" />
+            <Image className="header-img" src="/headerLogo.png" />
             Chef
           </div>
           <Nav className="d-flex justify-content-center align-items-center">
@@ -40,7 +41,7 @@ function Header() {
 
             {user?
             <>
-                <FaUserCircle className='text-white' style={{height:'3rem'}} title={user?.displayName}></FaUserCircle>
+                <FaUserCircle className='profile-icon' style={{height:'3rem'}} title={user?.displayName}></FaUserCircle>
             </>:<></>}
 
             {user ? 

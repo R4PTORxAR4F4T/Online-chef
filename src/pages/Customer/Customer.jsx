@@ -24,7 +24,7 @@ const Customer = () => {
                     <Carousel.Item key={customer.customer_id} interval={5000}>
                     <img
                     className="d-block w-100"
-                    src="/public/background.jpg"
+                    src="/background.jpg"
                     alt="First slide"
                     />
                     <Carousel.Caption>

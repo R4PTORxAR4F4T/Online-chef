@@ -4,3 +4,12 @@
     grid-gap: 20px; /* add some gap between the grid items */
 
 }
+
+@media screen and (max-width: 576px){
+    .chef-cards{
+        display: grid;
+        grid-template-columns:  1fr;
+        grid-gap: 20px; /* add some gap between the grid items */
+    
+    }
+}

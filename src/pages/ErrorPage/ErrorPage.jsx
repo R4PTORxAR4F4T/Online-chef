@@ -10,7 +10,7 @@ export default function ErrorPage() {
 
   return (
     <div className="error-page">
-      <Image className="w-25" src="/public/error.jpg" />
+      <Image className="w-25" src="/error.jpg" />
       
       <div>
         <p className="error-text">Page not found</p>

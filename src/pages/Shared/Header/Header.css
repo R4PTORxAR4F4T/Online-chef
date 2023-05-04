@@ -4,3 +4,21 @@
 .nav-option::hover {
     color: blue;
 }
+.header{
+    width: 75%;
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+}
+.profile-icon{
+    color: white;
+}
+
+@media screen and (max-width: 576px){
+    .header{
+        width: 100%;
+    }
+    .profile-icon{
+        width: 30px;
+    }
+}

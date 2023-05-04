@@ -4,10 +4,14 @@
     border-radius: 20px;
     backdrop-filter: blur(25px);
     color: rgba(255, 255, 255, 0.877);
+    position:relative;
 }
 .banner-logo{
     height: 60px;
 }
 .carousel-control-prev-icon, .active, .carousel-control-next-icon{
     display: none;
+}
+.carosal_body{
+     start-50 translate-middle-x 
 }
