@@ -1,6 +1,16 @@
 import React from 'react';
+import { PDFDownloadLink, Document, Page, Text } from '@react-pdf/renderer';
+import { FaDownload } from 'react-icons/fa';
 
 const blog = () => {
+
+    const MyDocument = () => (
+        <Document>
+          <Page>
+            <Text>Blog page costais the answers of the required questin asked for.</Text>
+          </Page>
+        </Document>
+      );
     return (
         
         <div className='w-75 border border-secondary mx-auto p-4'>
@@ -33,6 +43,11 @@ const blog = () => {
                 A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks. That's it! If you have code in a component that you feel would make sense to extract, either for reuse elsewhere or to keep the component simpler, you can pull that out into a function.</p>
                 <p className=' fs-6 fw-bolder text-success'>The main reason to write a custom hook is for code reusability.it can be reused easily, which makes the code cleaner and reduces the time to write the code</p>
             </div>
+
+            <p className=' fs-2 fw-bolder'>React to pdf</p>
+            <PDFDownloadLink document={<MyDocument />} fileName="myDocument.pdf">
+            <button><FaDownload /> Download PDF</button>
+            </PDFDownloadLink>
         </div>
     );
 };
