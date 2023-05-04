@@ -24,17 +24,17 @@ const router = createBrowserRouter([
             // {
             //   path:'/',
             //   element:<Chefs></Chefs>,
-            //   loader:({params}) => fetch(`http://localhost:5000/country/${1}`)
+            //   loader:({params}) => fetch(`https://assignment-10-server-r4ptorxar4f4t.vercel.app/country/${1}`)
             // },
             {
               path:'country/:id',
               element:<Chefs></Chefs>,
-              loader:({params}) => fetch(`http://localhost:5000/country/${params.id}`),
+              loader:({params}) => fetch(`https://assignment-10-server-r4ptorxar4f4t.vercel.app/country/${params.id}`),
               // children:[
               //   {
               //     path:'chefDetails/:id',
               //     element:<Details></Details>,
-              //     loader:({params}) => fetch(`http://localhost:5000/country/${params.id}`),
+              //     loader:({params}) => fetch(`https://assignment-10-server-r4ptorxar4f4t.vercel.app/country/${params.id}`),
               //   }
               // ]
             },
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         {
           path:'chefDetails/:id',
           element:<PrivateRoute><Details></Details></PrivateRoute>,
-          loader:({params}) => fetch(`http://localhost:5000/chefs/${params.id}`),
+          loader:({params}) => fetch(`https://assignment-10-server-r4ptorxar4f4t.vercel.app/chefs/${params.id}`),
         },
         {
           path: 'blog',

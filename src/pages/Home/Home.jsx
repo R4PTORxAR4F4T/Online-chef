@@ -12,7 +12,7 @@ const Home = () => {
     const [countrys,setCountrys] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/countrys')
+        fetch('https://assignment-10-server-r4ptorxar4f4t.vercel.app/countrys')
             .then(res=> res.json())
             .then(data => setCountrys(data))
             .catch(error => console.error(error))

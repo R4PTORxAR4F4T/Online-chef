@@ -8,7 +8,7 @@ const Carosalitem = (customer) => {
 
     return (
         <Carousel.Item interval={5000}>
-            <Image className="d-block w-100" src={customer_image}></Image>
+            <Image className="d-block w-100" src={customer?.customer?.customer_image}></Image>
             <Carousel.Caption>
             <h3>{customer_name}</h3>
             <p>{review}</p>

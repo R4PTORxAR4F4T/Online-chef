@@ -40,17 +40,7 @@ function Header() {
 
             {user?
             <>
-              {/* <OverlayTrigger
-                placement="right"
-                delay={{ show: 250, hide: 400 }}
-                overlay={renderTooltip}
-              > */}
-                <FaUserCircle className='text-white' style={{height:'3rem'}}></FaUserCircle>
-                <p className='text-white'>{user?.displayName}</p>
-                
-                {/* <Button variant="success">Hover me to see</Button> */}
-              {/* </OverlayTrigger> */}
-              
+                <FaUserCircle className='text-white' style={{height:'3rem'}} title={user?.displayName}></FaUserCircle>
             </>:<></>}
 
             {user ? 
