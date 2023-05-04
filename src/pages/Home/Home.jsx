@@ -3,6 +3,9 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Outlet, Link } from 'react-router-dom';
 import Banner from '../Shared/Banner/Banner';
 import Footer from '../Shared/Footer/Footer';
+import { AuthContext } from '../../providers/AuthProvider';
+import Service from '../Service/Service';
+import Customer from '../Customer/Customer';
 
 const Home = () => {
 
@@ -16,6 +19,8 @@ const Home = () => {
 
     })
 
+    const {loading} = useContext(AuthContext);
+    
     return (
         <div className='w-75 mx-auto '>
             <Banner></Banner>
@@ -35,6 +40,8 @@ const Home = () => {
                     </Col>
                 </Row>
             </Container>
+            <Service></Service>
+            <Customer></Customer>
         </div>
     );
 };

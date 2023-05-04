@@ -7,10 +7,10 @@ import Header from '../Shared/Header/Header';
 
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, handleGoogleSignIn, handleGithubSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login page location', location)
+    //login page location to from 
     const from = location.state?.from?.pathname || '/country/1'
 
     const handleLogin = event => {
@@ -32,6 +32,30 @@ const Login = () => {
             })
     }
 
+    const handleLoginGoogle = () => {
+        handleGoogleSignIn()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            navigate(from, { replace: true })
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
+    const handleLoginGithub = () => {
+        handleGithubSignIn()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            navigate(from, { replace: true })
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
     return (
         <div>
             <Container className='w-25 mx-auto m-5 border rounded-3 p-4'>
@@ -48,8 +72,8 @@ const Login = () => {
                 </Form.Group>
 
                 <Button className='w-100 mb-2 text-light bg-black' type="submit">Login</Button>
-                <Button className='w-100 mb-2 text-light bg-black'><FaGoogle></FaGoogle>  Login with Google</Button>
-                <Button className='w-100 mb-2 text-light bg-black'><FaGithub></FaGithub>  Login with Github</Button>
+                <Button onClick={handleLoginGoogle} className='w-100 mb-2 text-light bg-black'><FaGoogle></FaGoogle>  Login with Google</Button>
+                <Button onClick={handleLoginGithub} className='w-100 mb-2 text-light bg-black'><FaGithub></FaGithub>  Login with Github</Button>
 
                 <br />
                 <Form.Text className="text-secondary">

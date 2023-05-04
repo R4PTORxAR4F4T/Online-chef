@@ -39,7 +39,7 @@ const chefCard = (chef) => {
                     <span className='ms-2'> {rating?.number}</span>
                 </div>
                 <div>
-                    <Link to={`/chefDetails/${chef_id}`} className=' text-decoration-none text-dark fw-semibold border border-dark p-1 rounded-1'>Chef Details</Link>
+                    <Link to={`/chefDetails/${chef_id}`} className=' text-decoration-none text-dark fw-semibold border border-dark p-1 rounded-1'>View Recipes</Link>
                 </div>
             </Card.Footer>
         </Card>

@@ -17,14 +17,16 @@ const Recipe = ({ recipe }) => {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img className='h-25' variant="top" src={image} />
-      <Card.Body>
+      <Card.Body className='text-start'>
         <Card.Title>
           {recipe_name} 
         </Card.Title>
         <Card.Text>
+          <span className=' fw-semibold text-primary'>Ingredients : </span>
           {ingredients}
         </Card.Text>
         <Card.Text>
+          <span className=' fw-semibold text-primary'>Instructions : </span>
           {instructions}
         </Card.Text>
         <div className='d-flex justify-content-between'>

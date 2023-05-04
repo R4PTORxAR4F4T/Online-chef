@@ -3,11 +3,28 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import {AuthContext} from '../../../providers/AuthProvider';
 import React,{ useEffect, useState, useContext} from 'react';
+import { FaUserCircle } from "react-icons/fa";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 
 function Header() {
 
-  const user = useContext(AuthContext);
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Simple tooltip
+    </Tooltip>
+  );
+
+  const handleLogOut = () => {
+    logOut()
+        .then()
+        .catch(error => console.log(error));
+  }
+
+  const { logOut, user } = useContext(AuthContext);
+
+  // console.log();
 
   return (
     <div className="sticky-top w-75 mx-auto">
@@ -17,13 +34,38 @@ function Header() {
             <Image className="header-img" src="/public/headerLogo.png" />
             Chef
           </div>
-          <Nav className="">
+          <Nav className="d-flex justify-content-center align-items-center">
             <Link className="me-4 text-decoration-none text-light nav-option" to="/">Home</Link>
             <Link className="me-4 text-decoration-none text-light nav-option" to="/blog">Blog</Link>
-            <Button className="mx-3" variant="secondary">
+
+            {user?
+            <>
+              {/* <OverlayTrigger
+                placement="right"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip}
+              > */}
+                <FaUserCircle className='text-white' style={{height:'3rem'}}></FaUserCircle>
+                <p className='text-white'>{user?.displayName}</p>
+                
+                {/* <Button variant="success">Hover me to see</Button> */}
+              {/* </OverlayTrigger> */}
+              
+            </>:<></>}
+
+            {user ? 
+            <>
+              <Button onClick={handleLogOut} className="mx-3" variant="secondary">
+              Sign Out
+              </Button>
+            </>
+            :
+            <>
+              <Button className="mx-3" variant="secondary">
               <Link to="/login" className="text-decoration-none text-light">Login</Link>
-            </Button>
-            <span className='text-light'>{user && <>ase</>}</span>
+              </Button>
+            </>}
+            <span className='text-light'></span>
           </Nav>
         </Container>
       </Navbar>
