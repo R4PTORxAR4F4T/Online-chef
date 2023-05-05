@@ -6,7 +6,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <div className='w-75 mx-auto bg-black text-light mb-5 '>
+        <div className='footer'>
             <div className='d-flex p-5 justify-content-between align-items-center'>
                 <div>
                     <Image className='footer-logo' src='/headerLogo.png'></Image>

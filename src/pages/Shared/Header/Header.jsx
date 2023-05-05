@@ -1,22 +1,16 @@
 import { Navbar, Nav, Container, Image, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link,NavLink,useLocation } from 'react-router-dom';
 import './Header.css';
 import {AuthContext} from '../../../providers/AuthProvider';
 import React,{ useEffect, useState, useContext} from 'react';
 import { FaUserCircle } from "react-icons/fa";
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
 import ActiveLink from '../../ActiveLink/ActiveLink';
 
 
 function Header() {
 
-  const renderTooltip = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Simple tooltip
-    </Tooltip>
-  );
-
+  const location = useLocation();
+  
   const handleLogOut = () => {
     logOut()
         .then()
@@ -36,8 +30,8 @@ function Header() {
             Chef
           </div>
           <Nav className="d-flex justify-content-center align-items-center">
-            <Link className="me-4 text-decoration-none text-light nav-option" to="/">Home</Link>
-            <Link className="me-4 text-decoration-none text-light nav-option" to="/blog">Blog</Link>
+            <Link className={`me-4 text-decoration-none nav-option ${location.pathname === '/' ? 'text-primary' : 'text-light'}`} to="/">Home</Link>
+            <Link className={`me-4 text-decoration-none nav-option ${location.pathname === '/blog' ? 'text-primary' : 'text-light'}`} to="/blog">Blog</Link>
 
             {user?.photoURL?
             <>

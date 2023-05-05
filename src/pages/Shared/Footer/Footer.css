@@ -1,3 +1,14 @@
 .footer-logo{
     height: 80px;
 }
+.footer{
+    width: 75%;
+    margin: 20px auto;
+    background-color: black;
+    color: white;
+}
+@media screen and (max-width: 576px){
+    .footer{
+        width: 100%;
+    }
+}
