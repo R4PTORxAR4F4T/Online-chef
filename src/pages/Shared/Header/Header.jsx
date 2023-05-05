@@ -39,10 +39,13 @@ function Header() {
             <Link className="me-4 text-decoration-none text-light nav-option" to="/">Home</Link>
             <Link className="me-4 text-decoration-none text-light nav-option" to="/blog">Blog</Link>
 
-            {user?
+            {user?.photoURL?
             <>
-                <FaUserCircle className='profile-icon' style={{height:'3rem'}} title={user?.displayName}></FaUserCircle>
-            </>:<></>}
+              <img className=' rounded-circle' style={{height:'2rem', width:'2rem'}} src={user.photoURL} title={user.displayName} alt="" />              
+            </>:
+            <>
+              {/* <FaUserCircle className='profile-icon' style={{height:'3rem'}} title=""></FaUserCircle> */}
+            </>}
 
             {user ? 
             <>

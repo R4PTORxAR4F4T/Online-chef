@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useState } from 'react';
 import Header from '../Shared/Header/Header';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -18,8 +19,7 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-
-        
+ 
         if (password.length < 6) {
             setError("password is less then 6 cherecter");
             return;
@@ -29,6 +29,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
+                updateUserData(createdUser, name, photo);
                 form.reset();
             })
             .catch(error => {
@@ -38,6 +39,19 @@ const Register = () => {
 
     const handleAccepted = event =>{
         setAccepted(event.target.checked)
+    }
+
+    const updateUserData = (createdUser , name , photo) =>{
+        updateProfile(createdUser,{
+            displayName: name,
+            photoURL: photo
+        })
+        .then(()=>{
+            console.log('user updated successfully')
+        })
+        .catch(error=>{
+            setError(error.message)
+        })
     }
 
     return (
@@ -81,6 +95,7 @@ const Register = () => {
                 <br />
                 </Form.Text>
                 <Form.Text className="text-danger">
+
                 <br />{error}
                 </Form.Text>
             </Form>
